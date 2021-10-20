@@ -8,7 +8,7 @@ Recipe on how to create a singularity image file.
 
 # Download a base Ubuntu image to customize
 
-I've choose the Ubuntu 18.04 as a base to customize:
+Use Ubuntu 18.04 as a base to customize:
 
 ```bash
 sudo singularity build --sandbox ubuntu_remix_vx.y.z/ library://ubuntu:18.04
@@ -57,7 +57,7 @@ deb http://security.ubuntu.com/ubuntu bionic-security universe
 deb http://security.ubuntu.com/ubuntu bionic-security multiverse
 ```
 
-And them, update the system:
+Update the system:
 
 ```bash
 apt update
@@ -71,7 +71,7 @@ apt install locales locales-all
 dpkg-reconfigure locales
 ```
 
-*Note*: choose the locales locales 378 e 158 (i.e., 378. pt_BR.UTF-8 UTF-8, 158. en_US.UTF-8 UTF-8)
+*Note*: choose the locales 378 e 158 (i.e., 378. pt_BR.UTF-8 UTF-8, 158. en_US.UTF-8 UTF-8)
 *Note*: default will be `158`
 
 And run:
@@ -84,7 +84,7 @@ locale-gen
 
 ## Packages instalation
 
-At this point, your needs may be different. Install everything you need at this point.
+At this point, your requirements may be different. Install everything you need at this point.
 
 ```bash
 apt install build-essential  
@@ -192,6 +192,7 @@ apt install default-jre default-jdk openjdk-8-jdk
 
 ```bash
 update-alternatives --config java
+```
 
 *Choose*: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
 
@@ -199,7 +200,7 @@ update-alternatives --config java
 update-alternatives --config javac 
 ```
 
-*Choose:* /usr/lib/jvm/java-11-openjdk-amd64/bin/javac
+*Choose*: /usr/lib/jvm/java-11-openjdk-amd64/bin/javac
 
 * Reference: https://www.digitalocean.com/community/tutorials/como-instalar-o-java-com-apt-no-ubuntu-18-04-pt
 
@@ -239,6 +240,7 @@ If you just want to use the container, you may stop here.
 singularity keys newpair
 singularity remote list
 singularity remote login SylabsCloud
+```
 
 *Note*: Go to https://cloud.sylabs.io/auth/tokens and create a new token, copy and paste at the prompt.
 
