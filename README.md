@@ -194,13 +194,13 @@ apt install default-jre default-jdk openjdk-8-jdk
 update-alternatives --config java
 ```
 
-*Choose*: /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+*Choose*: `/usr/lib/jvm/java-11-openjdk-amd64/bin/java`
 
 ```bash
 update-alternatives --config javac 
 ```
 
-*Choose*: /usr/lib/jvm/java-11-openjdk-amd64/bin/javac
+*Choose*: /usr/lib/jvm/java-11-openjdk-amd64/bin/javac`
 
 * Reference: https://www.digitalocean.com/community/tutorials/como-instalar-o-java-com-apt-no-ubuntu-18-04-pt
 
