@@ -200,7 +200,7 @@ update-alternatives --config java
 update-alternatives --config javac 
 ```
 
-*Choose*: /usr/lib/jvm/java-11-openjdk-amd64/bin/javac`
+*Choose*: `/usr/lib/jvm/java-11-openjdk-amd64/bin/javac`
 
 * Reference: https://www.digitalocean.com/community/tutorials/como-instalar-o-java-com-apt-no-ubuntu-18-04-pt
 
