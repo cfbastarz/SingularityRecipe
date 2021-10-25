@@ -270,8 +270,7 @@ singularity push ubuntu_remix_vx.y.z.sif library://your_user_name/default/ubuntu
 ## To pull the container
 
 ```bash
-singularity pull --arch amd64 library://your_user_name/default/ubuntu_remix:vx.y.z
-singularity pull library://your_user_name/default/library:demo
+singularity pull library://your_user_name/default/ubuntu_remix:latest
 ```
 
 ## To verify the image
