@@ -269,6 +269,10 @@ singularity push ubuntu_remix_vx.y.z.sif library://your_user_name/default/ubuntu
 
 ## To pull the container
 
+*Note*: check your containers at https://cloud.sylabs.io/library/your_user_name to see the correct pull command.
+
+Mine is:
+
 ```bash
 singularity pull library://your_user_name/default/ubuntu_remix:latest
 ```
