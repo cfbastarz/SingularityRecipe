@@ -14,6 +14,8 @@ Use Ubuntu 18.04 as a base to customize:
 sudo singularity build --sandbox ubuntu_remix_vx.y.z/ library://ubuntu:18.04
 ```
 
+*Note*: replace the suffix `_vx.y.z` to wathever you need.
+
 * Reference: https://www.youtube.com/watch?v=nrgO3Q8-6hQ&t=342s&ab_channel=DanielPersson
 
 
@@ -31,7 +33,6 @@ Update the base system, install `vim` (or `nano`) to configure the system reposi
 apt update 
 apt upgrade
 apt install vim
-apt install vim-gtk
 ```
 
 ## Update system repository
@@ -57,7 +58,7 @@ deb http://security.ubuntu.com/ubuntu bionic-security universe
 deb http://security.ubuntu.com/ubuntu bionic-security multiverse
 ```
 
-Update the system:
+Perform a system upgrade:
 
 ```bash
 apt update
@@ -72,7 +73,7 @@ dpkg-reconfigure locales
 ```
 
 *Note*: choose the locales 378 e 158 (i.e., 378. pt_BR.UTF-8 UTF-8, 158. en_US.UTF-8 UTF-8)
-*Note*: default will be `158`
+*Note*: default will be `158` or `en_US.UTF-8`
 
 And run:
 
@@ -87,6 +88,7 @@ locale-gen
 At this point, your requirements may be different. Install everything you need at this point.
 
 ```bash
+apt install vim-gtk
 apt install build-essential  
 apt install gdb gdb-doc
 apt install cgdb
@@ -236,8 +238,17 @@ If you just want to use the container, you may stop here.
 
 ## Sign the image
 
+If you don't have a singularity key and follow the screen instructions (it will require a sylabs account - you can use you GitHub or Google account):
+
 ```bash
 singularity keys newpair
+```
+
+*Note*: take a look at https://sylabs.io/guides/3.0/user-guide/signNverify.html#signing-and-validating-your-own-containers for more information.
+
+If you already have a singularity key (it will require you to login to yout sylabs account):
+
+```bash
 singularity remote list
 singularity remote login SylabsCloud
 ```
@@ -245,7 +256,8 @@ singularity remote login SylabsCloud
 *Note*: Go to https://cloud.sylabs.io/auth/tokens and create a new token, copy and paste at the prompt.
 
 ```bash
-singularity key push 085718024004F8B0A4A7FC15C8F8538735EC9DD1
+singularity keys list
+singularity key push <your_key>
 singularity sign ubuntu_remix_vx.y.z.sif
 ```
 
